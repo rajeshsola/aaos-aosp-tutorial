@@ -8,10 +8,20 @@ sudp apt install repo
 > https://source.android.com/docs/setup/start/requirements
 
 # Build Steps
+
+Download source , Ref:- https://source.android.com/docs/setup/download
+
 ```
 mkdir android-16.0.0_r4 && cd android-16.0.0_r4
 repo init -u https://android.googlesource.com/platform/manifest -b android-16.0.0_r4 --max-depth=1
 cat .repo/manifests/default.xml | grep revision
+```
+
+Build the source , Ref:- https://source.android.com/docs/setup/download
+```
+source build/envsetup.sh
+lunch <target>
+make -j8
 ```
 
 # Kernel build
